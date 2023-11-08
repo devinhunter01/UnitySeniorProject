@@ -5,10 +5,21 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float walkSpeed = 4f;
+    public float sprintSpeed = 14f;
     public float maxVelocityChange = 10f;
+  //  [Space] 
+   // public float jumpHeight = 5f;
 
     private Vector2 input;
     private Rigidbody rb;
+
+    private bool sprinting;
+   // private bool jumping;
+
+    //private bool grounded = false;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +31,34 @@ public class Movement : MonoBehaviour
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         input.Normalize();
-    }
 
+        sprinting = Input.GetButton("Sprint");
+       // jumping = Input.GetButton("Jump");
+    }
+/*
     void FixedUpdate()
     {
-        rb.AddForce(CalculateMovement(walkSpeed), ForceMode.VelocityChange);
+        if (grounded)
+        {
+            if (jumping)
+            {
+             rb.velocity = new Vector3(rb.velocity.x, y:jumpHeight, rb.velocity.z);
+            } else if (input.magnitude > 0.5f)
+            {
+              rb.AddForce(CalculateMovement(sprinting ? sprintSpeed : walkSpeed), ForceMode.VelocityChange);   
+            }
+            else 
+            {
+                var velocity1
+            }
+        }
+        
     }
-
+*/
+    void FixedUpdate()
+    {
+        rb.AddForce(CalculateMovement(sprinting ? sprintSpeed : walkSpeed), ForceMode.VelocityChange);
+    }
     Vector3 CalculateMovement(float _speed)
     {
         Vector3 targetVelocity = new Vector3(input.x, 0, input.y);
