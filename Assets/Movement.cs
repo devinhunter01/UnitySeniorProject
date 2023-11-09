@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,20 @@ public class Movement : MonoBehaviour
 {
     public float walkSpeed = 4f;
     public float sprintSpeed = 14f;
-    public float maxVelocityChange = 10f;
-  //  [Space] 
-   // public float jumpHeight = 5f;
+    public float maxVelocityChange = 10f; 
+    [Space] 
+    public float jumpHeight = 5f;
+    
+    [Space]
+    public float airControl = 0.5f;
 
     private Vector2 input;
     private Rigidbody rb;
 
     private bool sprinting;
-   // private bool jumping;
+    private bool jumping;
 
-    //private bool grounded = false;
+    private bool grounded = false;
     
     
     
@@ -33,32 +37,67 @@ public class Movement : MonoBehaviour
         input.Normalize();
 
         sprinting = Input.GetButton("Sprint");
-       // jumping = Input.GetButton("Jump");
+        jumping = Input.GetButton("Jump");
     }
-/*
+
+    private void OnTriggerStay(Collider other)
+    {
+        grounded = true;
+    }
+
     void FixedUpdate()
     {
         if (grounded)
         {
             if (jumping)
             {
-             rb.velocity = new Vector3(rb.velocity.x, y:jumpHeight, rb.velocity.z);
-            } else if (input.magnitude > 0.5f)
-            {
-              rb.AddForce(CalculateMovement(sprinting ? sprintSpeed : walkSpeed), ForceMode.VelocityChange);   
+                rb.velocity = new Vector3(rb.velocity.x, y: jumpHeight, rb.velocity.z);
             }
-            else 
+            else if (input.magnitude > 0.5f)
             {
-                var velocity1
+                rb.AddForce(CalculateMovement(sprinting ? sprintSpeed : walkSpeed), ForceMode.VelocityChange);
+            }
+            else
+            {
+                var velocity1 = rb.velocity;
+                velocity1 = new Vector3(x: velocity1.x * 0.2f * Time.fixedDeltaTime, velocity1.y,
+                    z: velocity1.z * 0.2f * Time.fixedDeltaTime);
+                rb.velocity = velocity1;
             }
         }
+        else
+        {
+            if (input.magnitude > 0.5f)
+            {
+                rb.AddForce(CalculateMovement(sprinting ? sprintSpeed * airControl : walkSpeed * airControl), ForceMode.VelocityChange);
+            }
+            else
+            {
+                var velocity1 = rb.velocity;
+                velocity1 = new Vector3(x: velocity1.x * 0.2f * Time.fixedDeltaTime, velocity1.y,
+                    z: velocity1.z * 0.2f * Time.fixedDeltaTime);
+                rb.velocity = velocity1;
+            }
+        }    
         
+        grounded = false;
     }
-*/
+/*
     void FixedUpdate()
     {
-        rb.AddForce(CalculateMovement(sprinting ? sprintSpeed : walkSpeed), ForceMode.VelocityChange);
+        if (input.magnitude > 0.5f)
+        {
+            rb.AddForce(CalculateMovement(sprinting ? sprintSpeed : walkSpeed), ForceMode.VelocityChange); 
+        }
+        else
+        {
+           var velocity1 = rb.velocity;
+           velocity1 = new Vector3(x: velocity1.x * 0.2f * Time.fixedDeltaTime, velocity1.y, z: velocity1.z * 0.2f * Time.fixedDeltaTime);
+            rb.velocity = velocity1;
+        }
     }
+    */
+
     Vector3 CalculateMovement(float _speed)
     {
         Vector3 targetVelocity = new Vector3(input.x, 0, input.y);
