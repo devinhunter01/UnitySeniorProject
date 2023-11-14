@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerSetup : MonoBehaviour
 {
-  public Movement movement;
+  /*
+  public Movement_RDS movement;
   public GameObject camera;
 
   public void IsLocalPlayer()
@@ -12,4 +13,5 @@ public class PlayerSetup : MonoBehaviour
     movement.enabled = true;
     camera.SetActive(true);
   }
+  */
 }

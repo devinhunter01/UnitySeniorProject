@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JT_Movement : MonoBehaviour
 {
+    /*
     public float walkSpeed = 4f;
 
     public float maxVelocityChange = 10f;
@@ -50,5 +51,5 @@ public class JT_Movement : MonoBehaviour
             return new Vector3();
         }
     }
-    
+    */
 }
