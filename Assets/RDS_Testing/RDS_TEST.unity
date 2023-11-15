@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.31305543, g: 0.2937175, b: 0.51409054, a: 1}
+  m_IndirectSpecularColor: {r: 0.3133436, g: 0.2940988, b: 0.514294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1507,8 +1507,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 890757161}
-        m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
-        m_MethodName: JoinRoomButtonPressed
+        m_TargetAssemblyTypeName: RoomManager_RDS, Assembly-CSharp
+        m_MethodName: JoinButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2244,10 +2244,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: c678a58bf44cb43e68f04d4a02876df6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1950935628}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c678a58bf44cb43e68f04d4a02876df6, type: 3}
 --- !u!1 &890757160
 GameObject:
@@ -2305,33 +2302,6 @@ Transform:
   - {fileID: 586257226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &893010149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 4e4b928c5837943f4a5e43f487fe9b65, type: 3}
-  m_PrefabInstance: {fileID: 1923433143}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &893010150
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893010149}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 4e4b928c5837943f4a5e43f487fe9b65, type: 3}
 --- !u!1 &915462647
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,10 +5131,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 4e4b928c5837943f4a5e43f487fe9b65, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 893010150}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4b928c5837943f4a5e43f487fe9b65, type: 3}
 --- !u!1 &1927206140
 GameObject:
@@ -5300,33 +5267,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &1950935627 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: c678a58bf44cb43e68f04d4a02876df6, type: 3}
-  m_PrefabInstance: {fileID: 890144672}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1950935628
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950935627}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c678a58bf44cb43e68f04d4a02876df6, type: 3}
 --- !u!1 &1996161782
 GameObject:
   m_ObjectHideFlags: 0
