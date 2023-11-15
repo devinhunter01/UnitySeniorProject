@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
@@ -26,4 +27,6 @@ public class PlayerSetup_RDS : MonoBehaviour
 
     nicknameText.text = _nickname;
   }
+
+ 
 }

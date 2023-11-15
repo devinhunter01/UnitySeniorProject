@@ -132,7 +132,10 @@ public class Weapon_RDS : MonoBehaviour
                 
                 if (damage >= hit.transform.gameObject.GetComponent<Health_RDS>().health)
                 {
+                    
                     // kill
+                    RoomManager_RDS.instance.kills++;
+                    RoomManager_RDS.instance.SetHashes();
                     PhotonNetwork.LocalPlayer.AddScore(100);
                 }
                 

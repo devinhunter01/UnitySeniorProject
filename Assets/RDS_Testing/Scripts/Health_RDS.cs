@@ -22,8 +22,13 @@ public class Health_RDS : MonoBehaviour
         if (health <= _damage)
         {
             if(isLocalPlayer)
+            {
                 RoomManager_RDS.instance.SpawnPlayer();
-            
+                
+                // death
+                RoomManager_RDS.instance.deaths++;
+                RoomManager_RDS.instance.SetHashes();
+            }
          Destroy(gameObject); 
         }
      }
