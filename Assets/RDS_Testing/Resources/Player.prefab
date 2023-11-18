@@ -487,6 +487,7 @@ MonoBehaviour:
   camera: {fileID: 7868626407813760856}
   _nickname: 
   nicknameText: {fileID: 7630890105465451457}
+  team: 
 --- !u!1 &4632381356201282244
 GameObject:
   m_ObjectHideFlags: 0

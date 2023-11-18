@@ -23,6 +23,8 @@ public class RoomManager_RDS : MonoBehaviourPunCallbacks
 
     public string _nickname = "unnamed";
 
+    public string _team;
+
 
     [HideInInspector]
     public int kills = 0;
@@ -89,8 +91,21 @@ public class RoomManager_RDS : MonoBehaviourPunCallbacks
         _player.GetComponent<Health_RDS>().isLocalPlayer = true;
         
         _player.GetComponent<PhotonView>().RPC(methodName: "SetNickname", RpcTarget.AllBuffered, _nickname);
+        _player.GetComponent<PhotonView>().RPC(methodName: "SetColor", RpcTarget.AllBuffered, _team);
 
         PhotonNetwork.LocalPlayer.NickName = _nickname;
+    }
+
+    public void SetTeamRed()
+    {
+        _team = "red";
+        JoinButton();
+    }
+
+    public void SetTeamBlue()
+    {
+        _team = "blue";
+        JoinButton();
     }
 
     public void JoinButton() //This exists for now as a workaround to coming to this scene through the menu to avoid trying to connect to 2 servers. I'll try cleaning this up later to instantiate everything properly.

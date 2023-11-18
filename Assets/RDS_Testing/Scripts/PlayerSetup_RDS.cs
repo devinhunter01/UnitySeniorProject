@@ -14,11 +14,29 @@ public class PlayerSetup_RDS : MonoBehaviour
 
   public TextMeshPro nicknameText;
 
+  public string team;
+
   public void IsLocalPlayer()
   {
     movement.enabled = true;
     camera.SetActive(true);
   }
+
+  [PunRPC]
+  public void SetColor(string _color)
+  {
+    var renderer = GetComponent<Renderer>();
+    team = _color;
+    if (team == "blue")
+    {
+      renderer.material.SetColor("_Color", Color.blue);
+    }
+    else if (team == "red")
+    {
+      renderer.material.SetColor("_Color", Color.red);
+    }
+  }
+
 
   [PunRPC]
   public void SetNickname(string _name)
