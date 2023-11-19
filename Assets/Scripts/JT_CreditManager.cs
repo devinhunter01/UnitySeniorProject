@@ -14,7 +14,7 @@ public class JT_CreditManager : MonoBehaviour
     // Change this to go to whatever the mainmenu scene is
     void Update()
    {
-       if (Input.GetKey(KeyCode.Escape))
+       if (Input.anyKey)
        {
            SceneManager.LoadScene("JT_TestingMovement");
        }
