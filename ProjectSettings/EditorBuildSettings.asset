@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RDS_Testing/RDS_TEST.unity
     guid: 3f161b3cc9046fa4cbb13e3519ffd7af
+  - enabled: 1
+    path: Assets/Scenes/JT_Credits.unity
+    guid: ae551727120ae7944a9d316b85d86ec4
+  - enabled: 1
+    path: Assets/Scenes/JT_TestingMovement.unity
+    guid: 135bafb7385d846469d62a3626e75d6f
   m_configObjects: {}
