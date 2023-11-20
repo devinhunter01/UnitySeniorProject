@@ -24,8 +24,18 @@ public class ServerLauncher : MonoBehaviourPunCallbacks
     }
     void Start()
     {
-        Debug.Log("Connecting...");
-        PhotonNetwork.ConnectUsingSettings();
+        if(!PhotonNetwork.IsConnected)
+        {
+            Debug.Log("Connecting...");
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
+            MenuManager.Instance.OpenMenu("main");
+        }
+
+        //Debug.Log("Connecting...");
+        //PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()

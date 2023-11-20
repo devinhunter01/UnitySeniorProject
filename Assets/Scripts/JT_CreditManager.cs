@@ -16,12 +16,12 @@ public class JT_CreditManager : MonoBehaviour
    {
        if (Input.anyKey)
        {
-           SceneManager.LoadScene("JT_TestingMovement");
+           SceneManager.LoadScene("DH_MainMenu");
        }
    }
 
     public void WaitToEnd()
     {
-        SceneManager.LoadScene("JT_TestingMovement");
+        SceneManager.LoadScene("DH_MainMenu");
     }
 }

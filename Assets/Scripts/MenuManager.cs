@@ -55,5 +55,10 @@ public class MenuManager : MonoBehaviour
         menu.Close();
     }
 
+    public void StartCredits()
+    {
+        SceneManager.LoadScene("JT_Credits");
+    }
+
 
 }
