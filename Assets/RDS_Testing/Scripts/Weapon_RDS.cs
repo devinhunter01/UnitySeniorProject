@@ -118,6 +118,8 @@ public class Weapon_RDS : MonoBehaviour
         recoiling = true;
         recovering = false;
         
+        GetComponent<AudioSource>().Play();
+
         Ray ray = new Ray(camera.transform.position, camera.transform.forward);
 
         RaycastHit hit;
